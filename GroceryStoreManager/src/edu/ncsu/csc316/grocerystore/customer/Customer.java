@@ -6,26 +6,25 @@ package edu.ncsu.csc316.grocerystore.customer;
  */
 public class Customer {
 
-	/**
-	 * A customer's ID
-	 */
+	/** A customer's ID */
 	String customerID;
 	
-	/**
-	 * A customer's name
-	 */
+	/** A customer's name */
 	String customerName;
 	
-	/**
-	 * A customer's state
-	 */
+	/** A customer's state */
 	String customerState;
 	
-	/**
-	 * A customer's zipcode
-	 */
+	/** A customer's zipcode */
 	int customerZipcode;
 	
+	/**
+	 * Constructor for a customer object.
+	 * @param newID id of the new customer.
+	 * @param newName name of the new customer.
+	 * @param newState state of the new customer.
+	 * @param newZipcode zipcode of the new customer.
+	 */
 	public Customer( String newID, String newName, String newState, int newZipcode ) {
 		this.setCustomerID(newID);
 		this.setCustomerName(newName);

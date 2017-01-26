@@ -17,7 +17,7 @@ public class CustomerTest {
 	public void testCustomer() {
 		Customer testCust = new Customer( "testID", "testName", "testState", 27511);
 		
-		assertEquals( "testID", testCust.getCustomerID());
+		assertEquals( "testID", testCust.getCustomerID() );
 		assertEquals( "testName", testCust.getCustomerName() );
 		assertEquals( "testState", testCust.getCustomerState() );
 		assertEquals( 27511, testCust.getCustomerZipcode() );
