@@ -1,16 +1,32 @@
 package edu.ncsu.csc316.grocerystore.customer;
 
+/**
+ * @author Nicholas Board (ndboard)
+ * Handles the creation and methods of Customer objects.
+ */
 public class Customer {
 
-	int customerID;
+	/**
+	 * A customer's ID
+	 */
+	String customerID;
 	
+	/**
+	 * A customer's name
+	 */
 	String customerName;
 	
+	/**
+	 * A customer's state
+	 */
 	String customerState;
 	
+	/**
+	 * A customer's zipcode
+	 */
 	int customerZipcode;
 	
-	public Customer( int newID, String newName, String newState, int newZipcode ) {
+	public Customer( String newID, String newName, String newState, int newZipcode ) {
 		this.setCustomerID(newID);
 		this.setCustomerName(newName);
 		this.setCustomerState(newState);
@@ -20,14 +36,14 @@ public class Customer {
 	/**
 	 * @return the customerID
 	 */
-	public int getCustomerID() {
+	public String getCustomerID() {
 		return customerID;
 	}
 
 	/**
 	 * @param customerID the customerID to set
 	 */
-	public void setCustomerID(int customerID) {
+	public void setCustomerID(String customerID) {
 		this.customerID = customerID;
 	}
 
