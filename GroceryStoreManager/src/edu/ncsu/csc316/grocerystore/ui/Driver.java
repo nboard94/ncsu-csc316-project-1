@@ -1,7 +1,5 @@
 package edu.ncsu.csc316.grocerystore.ui;
 
-import edu.ncsu.csc316.grocerystore.manager.GroceryStoreManager;
-
 public class Driver {
 	
 	static String customerFile;
@@ -11,8 +9,7 @@ public class Driver {
 		
 		CommandPrompt cp = new CommandPrompt();
 		cp.interact();
-		
-		
+	
 		
 	}
 

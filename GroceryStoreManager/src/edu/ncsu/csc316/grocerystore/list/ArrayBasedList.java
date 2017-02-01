@@ -46,4 +46,14 @@ public class ArrayBasedList<E> implements List<E> {
 		return items[ slot ];
 	}
 	
+	private class Iterator<E> implements Iterable<E> {
+
+		@Override
+		public java.util.Iterator<E> iterator() {
+			// TODO Auto-generated method stub
+			return null;
+		}
+		
+	}
+	
 }

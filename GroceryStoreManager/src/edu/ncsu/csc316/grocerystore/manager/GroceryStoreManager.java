@@ -1,7 +1,16 @@
 package edu.ncsu.csc316.grocerystore.manager;
 
+import edu.ncsu.csc316.grocerystore.customer.Customer;
+import edu.ncsu.csc316.grocerystore.customer.io.CustomerFileReader;
+import edu.ncsu.csc316.grocerystore.customer.io.OrderFileReader;
+import edu.ncsu.csc316.grocerystore.list.ArrayBasedList;
+import edu.ncsu.csc316.grocerystore.order.Product;
+
 public class GroceryStoreManager {
 
+	ArrayBasedList<Customer> customerList = new ArrayBasedList<Customer>();
+	ArrayBasedList<Product> productList = new ArrayBasedList<Product>();
+	
     /**
      * Constructs a new GroceryStoreManager object using
      * the two input files of customers and products
@@ -11,7 +20,11 @@ public class GroceryStoreManager {
      */
     public GroceryStoreManager(String pathToProductFile, String pathToCustomerFile)
     {
-        //TODO your code here    	
+        CustomerFileReader CFR = new CustomerFileReader(pathToCustomerFile);
+        customerList = CFR.getData();
+        
+        OrderFileReader OFR = new OrderFileReader(pathToProductFile);
+        productList = OFR.getData();
     	
     	
     	
