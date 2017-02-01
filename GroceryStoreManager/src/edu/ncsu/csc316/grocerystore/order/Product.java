@@ -23,6 +23,7 @@ public class Product {
 	}
 
 	/**
+	 * The getter for the brand.
 	 * @return the brand
 	 */
 	public String getBrand() {
@@ -30,6 +31,7 @@ public class Product {
 	}
 
 	/**
+	 * The setter for the brand.
 	 * @param brand the brand to set
 	 */
 	public void setBrand(String brand) {
@@ -37,6 +39,7 @@ public class Product {
 	}
 
 	/**
+	 * The getter for the description.
 	 * @return the description
 	 */
 	public String getDescription() {
@@ -44,6 +47,7 @@ public class Product {
 	}
 
 	/**
+	 * The setter for the description.
 	 * @param description the description to set
 	 */
 	public void setDescription(String description) {

@@ -33,6 +33,7 @@ public class Customer {
 	}
 
 	/**
+	 * Getter for customerID.
 	 * @return the customerID
 	 */
 	public String getCustomerID() {
@@ -40,6 +41,7 @@ public class Customer {
 	}
 
 	/**
+	 * Setter for customerID.
 	 * @param customerID the customerID to set
 	 */
 	public void setCustomerID(String customerID) {
@@ -47,6 +49,7 @@ public class Customer {
 	}
 
 	/**
+	 * Getter for customerName.
 	 * @return the customerName
 	 */
 	public String getCustomerName() {
@@ -54,6 +57,7 @@ public class Customer {
 	}
 
 	/**
+	 * Setter for customerName.
 	 * @param customerName the customerName to set
 	 */
 	public void setCustomerName(String customerName) {
@@ -61,6 +65,7 @@ public class Customer {
 	}
 
 	/**
+	 * Getter for customerState.
 	 * @return the customerState
 	 */
 	public String getCustomerState() {
@@ -68,6 +73,7 @@ public class Customer {
 	}
 
 	/**
+	 * Setter for customerState.
 	 * @param customerState the customerState to set
 	 */
 	public void setCustomerState(String customerState) {
@@ -75,6 +81,7 @@ public class Customer {
 	}
 
 	/**
+	 * Getter for customerZipcode.
 	 * @return the customerZipcode
 	 */
 	public int getCustomerZipcode() {
@@ -82,6 +89,7 @@ public class Customer {
 	}
 
 	/**
+	 * Setter for customerZipcode.
 	 * @param customerZipcode the customerZipcode to set
 	 */
 	public void setCustomerZipcode(int customerZipcode) {
