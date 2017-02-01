@@ -1,8 +1,8 @@
 package edu.ncsu.csc316.grocerystore.order;
 
 /**
- * @author Nicholas Board (ndboard)
  * Handles the creation and methods of a product object.
+ * @author Nicholas Board (ndboard)
  */
 public class Product {
 

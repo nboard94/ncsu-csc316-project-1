@@ -6,8 +6,8 @@ import edu.ncsu.csc316.grocerystore.list.ArrayBasedList;
 import edu.ncsu.csc316.grocerystore.order.Product;
 
 /**
- * @author Nicholas Board (ndboard)
  * Class to read in the data from an order file.
+ * @author Nicholas Board (ndboard)
  */
 public class OrderFileReader {
 

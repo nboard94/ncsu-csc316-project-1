@@ -1,8 +1,8 @@
 package edu.ncsu.csc316.grocerystore.customer;
 
 /**
- * @author Nicholas Board (ndboard)
  * Handles the creation and methods of Customer objects.
+ * @author Nicholas Board (ndboard)
  */
 public class Customer {
 
