@@ -14,7 +14,7 @@ public class CustomerFileReader {
 	/** The customer data. */
 	private ArrayBasedList<Customer> data = new ArrayBasedList<Customer>();
 	/** The current customer while looping. */
-	private Customer currentCust;
+	private Customer currentCust = new Customer("", "", "", 0);
 
 	/**
 	 * Scans in a file, adding customer data to the ArrayBasedList.

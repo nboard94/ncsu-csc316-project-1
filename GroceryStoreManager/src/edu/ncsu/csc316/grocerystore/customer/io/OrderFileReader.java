@@ -14,7 +14,7 @@ public class OrderFileReader {
 	/** The product data. */
 	private ArrayBasedList<Product> data = new ArrayBasedList<Product>();
 	/** The current product while looping. */
-	private Product currentProd;
+	private Product currentProd = new Product("", "");
 
 	/**
 	 * Scans in a file, adding product data to the ArrayBasedList.
