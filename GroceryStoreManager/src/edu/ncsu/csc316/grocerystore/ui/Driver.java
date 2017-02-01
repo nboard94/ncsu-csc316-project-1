@@ -12,7 +12,6 @@ public class Driver {
 		CommandPrompt cp = new CommandPrompt();
 		cp.interact();
 		
-		GroceryStoreManager GSM = new GroceryStoreManager(cp.getOrderFile(), cp.getCustomerFile());
 		
 		
 	}
