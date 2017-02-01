@@ -2,12 +2,17 @@ package edu.ncsu.csc316.grocerystore.list;
 
 public class ArrayBasedList<E> implements List<E> {
 
-	static final int RESIZE = 10;
-	int size;
+	private static final int RESIZE = 10;
+	private int size;
 	
-	@SuppressWarnings("unchecked")
-	E[] items = (E[]) new Object[ RESIZE ];
+	private E[] items = (E[]) new Object[ RESIZE ];
 
+	@SuppressWarnings("unchecked")
+	public ArrayBasedList() {
+		size = 0;
+		
+	}
+	
 	@Override
 	public int size() {
 		return size;
@@ -17,7 +22,7 @@ public class ArrayBasedList<E> implements List<E> {
 	@Override
 	public void add( Object newItem ) {
 
-		if ( items.length >= size ) {
+		if ( items.length <= size ) {
 			
 			E[] largerItems = (E[]) new Object[ size + RESIZE ];
 			
@@ -30,6 +35,8 @@ public class ArrayBasedList<E> implements List<E> {
 		}
 		
 		items[ size ] = (E) newItem;
+		
+		size++;
 		
 	}
 
