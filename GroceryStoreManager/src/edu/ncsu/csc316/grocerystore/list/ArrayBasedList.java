@@ -13,15 +13,14 @@ public class ArrayBasedList<E> implements List<E> {
 	/** The number of objects in the array. */
 	private int size;
 	/** The generic array of objects. */
+	@SuppressWarnings("unchecked")
 	private E[] items = (E[]) new Object[ RESIZE ];
 
 	/**
 	 * Constructor of the ArrayBasedList.
 	 */
-	@SuppressWarnings("unchecked")
 	public ArrayBasedList() {
 		size = 0;
-		
 	}
 	
 	/* (non-Javadoc)

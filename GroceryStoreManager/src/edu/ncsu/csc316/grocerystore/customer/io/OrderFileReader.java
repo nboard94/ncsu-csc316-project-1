@@ -1,5 +1,7 @@
 package edu.ncsu.csc316.grocerystore.customer.io;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 import edu.ncsu.csc316.grocerystore.list.ArrayBasedList;
@@ -25,10 +27,12 @@ public class OrderFileReader {
 	/**
 	 * Scans in a file, adding product data to the ArrayBasedList.
 	 * @param filePath The path to the order file.
+	 * @throws FileNotFoundException 
 	 */
-	public OrderFileReader(String filePath) {
-		 
-		Scanner scan = new Scanner(filePath);
+	public OrderFileReader(String filePath) throws FileNotFoundException {
+		
+		File file = new File(filePath);
+		Scanner scan = new Scanner(file);
 		
 		while (scan.hasNextLine()) {
 			
