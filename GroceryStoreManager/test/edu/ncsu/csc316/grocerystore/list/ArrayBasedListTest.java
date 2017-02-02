@@ -14,10 +14,16 @@ import edu.ncsu.csc316.grocerystore.order.Product;
  */
 public class ArrayBasedListTest {
 
+	/** The ArrayBasedList to use when testing. */
 	ArrayBasedList smallList;
+	/** A Customer object to use when testing. */
 	Customer testCust;
+	/** A Product object to use when testing. */
 	Product testProd;
 	
+	/**
+	 * Tests the constructor of the ArrayBasedList.
+	 */
 	@Before
 	public void testArrayBastList() {
 		smallList = new ArrayBasedList();
@@ -26,11 +32,17 @@ public class ArrayBasedListTest {
 		
 	}
 	
+	/**
+	 * Tests the size getter for ArrayBasedList.
+	 */
 	@Test
 	public void testSize() {
 		assertEquals(0, smallList.size());
 	}
 	
+	/**
+	 * Tests adding objects to the ArrayBasedList.
+	 */
 	@Test
 	public void addTest() {
 	    smallList.add(testCust);
