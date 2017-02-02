@@ -1,5 +1,7 @@
 package edu.ncsu.csc316.grocerystore.manager;
 
+import java.io.FileNotFoundException;
+
 import edu.ncsu.csc316.grocerystore.customer.Customer;
 import edu.ncsu.csc316.grocerystore.customer.io.CustomerFileReader;
 import edu.ncsu.csc316.grocerystore.customer.io.OrderFileReader;
@@ -23,8 +25,9 @@ public class GroceryStoreManager {
      * 
      * @param pathToProductFile - the path to the product file
      * @param pathToCustomerFile - the path to the customer file
+     * @throws FileNotFoundException 
      */
-    public GroceryStoreManager(String pathToProductFile, String pathToCustomerFile)
+    public GroceryStoreManager(String pathToProductFile, String pathToCustomerFile) throws FileNotFoundException
     {
         CustomerFileReader custReader = new CustomerFileReader(pathToCustomerFile);
         customerList = custReader.getData();
