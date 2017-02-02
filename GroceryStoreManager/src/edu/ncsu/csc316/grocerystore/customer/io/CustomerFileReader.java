@@ -6,8 +6,8 @@ import edu.ncsu.csc316.grocerystore.customer.Customer;
 import edu.ncsu.csc316.grocerystore.list.ArrayBasedList;
 
 /**
- * @author Nicholas Board (ndboard)
  * Class to read in the data from a customer file.
+ * @author Nicholas Board (ndboard)
  */
 public class CustomerFileReader {
 	

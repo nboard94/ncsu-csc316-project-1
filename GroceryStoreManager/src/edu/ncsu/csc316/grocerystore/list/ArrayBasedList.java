@@ -1,5 +1,11 @@
 package edu.ncsu.csc316.grocerystore.list;
 
+/**
+ * An Array Based Data Structure that automatically
+ * resizes when needed.
+ * @author Nicholas Board (ndboard)
+ * @param <E> Generic data type.
+ */
 public class ArrayBasedList<E> implements List<E> {
 
 	private static final int RESIZE = 10;
@@ -45,15 +51,4 @@ public class ArrayBasedList<E> implements List<E> {
 		
 		return items[ slot ];
 	}
-	
-	private class Iterator<E> implements Iterable<E> {
-
-		@Override
-		public java.util.Iterator<E> iterator() {
-			// TODO Auto-generated method stub
-			return null;
-		}
-		
-	}
-	
 }

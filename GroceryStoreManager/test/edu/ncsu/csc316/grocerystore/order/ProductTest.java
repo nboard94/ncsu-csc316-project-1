@@ -5,8 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 /**
- * @author Nicholas Board (ndboard)
  * Class for testing the Product object and associated methods.
+ * @author Nicholas Board (ndboard)
  */
 public class ProductTest {
 

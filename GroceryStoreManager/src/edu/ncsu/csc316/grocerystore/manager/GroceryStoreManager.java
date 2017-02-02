@@ -6,6 +6,12 @@ import edu.ncsu.csc316.grocerystore.customer.io.OrderFileReader;
 import edu.ncsu.csc316.grocerystore.list.ArrayBasedList;
 import edu.ncsu.csc316.grocerystore.order.Product;
 
+/**
+ * The GroceryStoreManager handles the customer and
+ * product data, as well as provides operations for
+ * sort customers and looking up products.
+ * @author Nicholas Board (ndboard)
+ */
 public class GroceryStoreManager {
 
 	ArrayBasedList<Customer> customerList = new ArrayBasedList<Customer>();
@@ -20,11 +26,11 @@ public class GroceryStoreManager {
      */
     public GroceryStoreManager(String pathToProductFile, String pathToCustomerFile)
     {
-        CustomerFileReader CFR = new CustomerFileReader(pathToCustomerFile);
-        customerList = CFR.getData();
+        CustomerFileReader custReader = new CustomerFileReader(pathToCustomerFile);
+        customerList = custReader.getData();
         
-        OrderFileReader OFR = new OrderFileReader(pathToProductFile);
-        productList = OFR.getData();
+        OrderFileReader orderReader = new OrderFileReader(pathToProductFile);
+        productList = orderReader.getData();
     	
     	
     	

@@ -8,6 +8,10 @@ import org.junit.Test;
 import edu.ncsu.csc316.grocerystore.customer.Customer;
 import edu.ncsu.csc316.grocerystore.order.Product;
 
+/**
+ * Tests the ArrayBasedList data structure.
+ * @author Nicholas Board (ndboard)
+ */
 public class ArrayBasedListTest {
 
 	ArrayBasedList smallList;

@@ -1,9 +1,9 @@
 package edu.ncsu.csc316.grocerystore.list;
 
 /**
+ * Interface for the ArrayBasedList and LinkedList in this project.
  * @author Nicholas Board (ndboard)
  * @param <E> Generic data type.
- * Interface for the ArrayBasedList and LinkedList in this project.
  */
 public interface List<E> {
 	

@@ -1,8 +1,8 @@
 package edu.ncsu.csc316.grocerystore.io;
 
 /**
- * @author Nicholas Board (ndboard)
  * Testing class for the CustomerFileReader object.
+ * @author Nicholas Board (ndboard)
  */
 public class CustomerFileReaderTest {
 

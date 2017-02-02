@@ -8,6 +8,7 @@ public class CommandPrompt {
 	String orderFile;
 	
 	public CommandPrompt() {
+		// This constructor is intentionally empty. Nothing special is needed here.
 	}
 	
 	public void interact() {
