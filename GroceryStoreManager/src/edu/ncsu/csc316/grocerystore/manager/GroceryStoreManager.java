@@ -27,7 +27,7 @@ public class GroceryStoreManager {
      * @param pathToCustomerFile - the path to the customer file
      * @throws FileNotFoundException 
      */
-    public GroceryStoreManager(String pathToProductFile, String pathToCustomerFile) throws FileNotFoundException
+    public GroceryStoreManager(String pathToProductFile, String pathToCustomerFile)
     {
         CustomerFileReader custReader = new CustomerFileReader(pathToCustomerFile);
         customerList = custReader.getData();
