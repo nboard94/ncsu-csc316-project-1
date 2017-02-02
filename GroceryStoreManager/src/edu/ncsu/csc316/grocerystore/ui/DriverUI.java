@@ -1,5 +1,7 @@
 package edu.ncsu.csc316.grocerystore.ui;
 
+import edu.ncsu.csc316.grocerystore.manager.GroceryStoreManager;
+
 /**
  * Contains the main method that starts the program
  * and the GroceryStoreManager object.
@@ -20,6 +22,8 @@ public class DriverUI {
 		
 		CommandPromptUI cp = new CommandPromptUI();
 		cp.interact();
+		
+		GroceryStoreManager manager = new GroceryStoreManager(cp.getOrderFile(), cp.getCustomerFile());
 		
 	}
 }

@@ -27,13 +27,16 @@ public class CommandPromptUI {
 	public void interact() {
 		Scanner commandScan = new Scanner(System.in);
 		
-		System.out.println("Please provide the filepath for the customerFile:\n\t");
-		setCustomerFile(commandScan.next());
+		//TODO take out these hard strings
+		System.out.println("Please provide the filepath for the customerFile:");
+		//setCustomerFile(commandScan.next());
+		setCustomerFile("input/customers_small.txt");
 		
-		System.out.println("\n\nPlease provide the filepath for the orderFile:\n\t");
-		setOrderFile(commandScan.next());
+		System.out.println("\nPlease provide the filepath for the orderFile:");
+		//setOrderFile(commandScan.next());
+		setOrderFile("input/order_small.txt");
 		
-		System.out.println("\n\nThank you!\n");
+		System.out.println("\nThank you!\n");
 		commandScan.close();
 	}
 	

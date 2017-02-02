@@ -15,8 +15,6 @@ public class CustomerFileReader {
 	
 	/** The customer data. */
 	private ArrayBasedList<Customer> data = new ArrayBasedList<Customer>();
-	/** The current customer while looping. */
-	private Customer currentCust = new Customer("", "", "", 0);
 	
 	private String currentLine;
 	
@@ -37,8 +35,11 @@ public class CustomerFileReader {
 			throw new RuntimeException();
 		}
 		
-		
+		Customer currentCust;
 		while (scan.hasNextLine()) {
+			
+			/** The current customer while looping. */
+			currentCust = new Customer("", "", "", 0);
 			currentLine = scan.nextLine();
 			currentData = currentLine.split(",");
 			
@@ -55,7 +56,6 @@ public class CustomerFileReader {
 		}
 		
 		scan.close();
-		
 	}
 	
 	/**

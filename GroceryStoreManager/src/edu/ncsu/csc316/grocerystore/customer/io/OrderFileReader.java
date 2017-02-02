@@ -15,8 +15,6 @@ public class OrderFileReader {
 
 	/** The product data. */
 	private ArrayBasedList<Product> data = new ArrayBasedList<Product>();
-	/** The current product while looping. */
-	private Product currentProd = new Product("", "");
 	/** The current line. */
 	private String currentLine;
 	/** The current product's brand. */
@@ -39,8 +37,10 @@ public class OrderFileReader {
 			throw new RuntimeException();
 		}
 		
+		Product currentProd;
 		while (scan.hasNextLine()) {
 			
+			currentProd = new Product("", "");
 			currentLine = scan.nextLine();
 			currentBrand = currentLine.substring(0, currentLine.indexOf(' '));
 			currentDescription = currentLine.substring(currentLine.indexOf(' '));

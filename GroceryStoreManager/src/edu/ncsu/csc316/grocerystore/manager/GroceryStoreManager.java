@@ -33,7 +33,9 @@ public class GroceryStoreManager {
         customerList = custReader.getData();
         
         OrderFileReader orderReader = new OrderFileReader(pathToProductFile);
-        productList = orderReader.getData();	
+        productList = orderReader.getData();
+        
+        System.out.print(this.getCustomers());
     }
     
     /**
@@ -49,8 +51,20 @@ public class GroceryStoreManager {
      */
     public String getCustomers()
     {
-		return null;
-        //TODO your code here
+    	Customer currentCustomer;
+    	String output = "";
+    	
+    	for (int i = 0; i < customerList.size(); i++) {
+    		currentCustomer = customerList.get(i);
+    		
+    		output += "Customer [id=" + currentCustomer.getCustomerID()
+    					+ ", company=" + currentCustomer.getCustomerName()
+    					+ ", state=" + currentCustomer.getCustomerState()
+    					+ ", zipcode=" + currentCustomer.getCustomerZipcode()
+    					+ "\n";
+    	}
+    	
+		return output;
     }
     
     /**
