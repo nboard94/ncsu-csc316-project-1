@@ -38,7 +38,10 @@ public class OrderFileReader {
 			
 			currentLine = scan.nextLine();
 			currentBrand = currentLine.substring(0, currentLine.indexOf(' '));
-			currentDescription = currentLine.substring(currentLine.indexOf(' ' + 1));
+			currentDescription = currentLine.substring(currentLine.indexOf(' '));
+			
+			currentBrand = currentBrand.trim();
+			currentDescription = currentDescription.trim();
 			
 			currentProd.setBrand(currentBrand);
 			currentProd.setDescription(currentDescription);
