@@ -17,6 +17,9 @@ public class OrderFileReaderTest {
 	/** Filepath of the small order testing file. */
 	String testFile = "input/order_small.txt";
 	
+	/**
+	 * Tests the functionality of the OrderFileReader.
+	 */
 	@Test
 	public void testOrderFileReader() {
 		
@@ -25,5 +28,12 @@ public class OrderFileReaderTest {
 		ArrayBasedList<Product> data = ordReadTest.getData();
 		
 		assertEquals(50000, data.size());
+		
+		try {
+			ordReadTest = new OrderFileReader("bologna");
+			fail();
+		} catch (RuntimeException e) {
+			assertEquals(50000, data.size());
+		}
 	}
 }

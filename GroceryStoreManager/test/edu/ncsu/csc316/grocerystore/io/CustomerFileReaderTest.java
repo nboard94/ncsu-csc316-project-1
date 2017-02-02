@@ -17,6 +17,9 @@ public class CustomerFileReaderTest {
 	/** Filepath of the small customers testing file. */
 	String testFile = "input/customers_small.txt";
 	
+	/**
+	 * Tests the functionality of the CustomerFileReader.
+	 */
 	@Test
 	public void testCustomerFileReader() {
 		
@@ -25,6 +28,13 @@ public class CustomerFileReaderTest {
 		ArrayBasedList<Customer> data = custReadTest.getData();
 		
 		assertEquals(50000, data.size());
+		
+		try {
+			custReadTest = new CustomerFileReader("bologna");
+			fail();
+		} catch (RuntimeException e) {
+			assertEquals(50000, data.size());
+		}
 	}
 	
 	
