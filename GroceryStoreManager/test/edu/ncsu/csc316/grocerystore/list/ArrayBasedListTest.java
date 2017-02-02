@@ -15,7 +15,7 @@ import edu.ncsu.csc316.grocerystore.order.Product;
 public class ArrayBasedListTest {
 
 	/** The ArrayBasedList to use when testing. */
-	ArrayBasedList smallList;
+	ArrayBasedList<Object> smallList;
 	/** A Customer object to use when testing. */
 	Customer testCust;
 	/** A Product object to use when testing. */
@@ -26,7 +26,7 @@ public class ArrayBasedListTest {
 	 */
 	@Before
 	public void testArrayBastList() {
-		smallList = new ArrayBasedList();
+		smallList = new ArrayBasedList<Object>();
 		testCust = new Customer("testID", "testName", "testState", 0);
 		testProd = new Product("testBrand", "testDesc");
 		
