@@ -16,27 +16,24 @@ import edu.ncsu.csc316.grocerystore.order.Product;
  */
 public class GroceryStoreManager {
 
-	ArrayBasedList<Customer> customerList = new ArrayBasedList<Customer>();
-	ArrayBasedList<Product> productList = new ArrayBasedList<Product>();
+	/** The list of customer data. */
+	private ArrayBasedList<Customer> customerList = new ArrayBasedList<Customer>();
+	/** The list of product data. */
+	private ArrayBasedList<Product> productList = new ArrayBasedList<Product>();
 	
     /**
      * Constructs a new GroceryStoreManager object using
      * the two input files of customers and products
-     * 
+     *  
      * @param pathToProductFile - the path to the product file
      * @param pathToCustomerFile - the path to the customer file
-     * @throws FileNotFoundException 
      */
-    public GroceryStoreManager(String pathToProductFile, String pathToCustomerFile)
-    {
+    public GroceryStoreManager(String pathToProductFile, String pathToCustomerFile) {
         CustomerFileReader custReader = new CustomerFileReader(pathToCustomerFile);
         customerList = custReader.getData();
         
         OrderFileReader orderReader = new OrderFileReader(pathToProductFile);
-        productList = orderReader.getData();
-    	
-    	
-    	
+        productList = orderReader.getData();	
     }
     
     /**
@@ -69,5 +66,37 @@ public class GroceryStoreManager {
 
         //TODO your code here
 		return description;
+    }
+    
+    /**
+     * Getter method for the customerList.
+     * @return customerList the list of customer data.
+     */
+    public ArrayBasedList<Customer> getCustomerData() {
+    	return customerList;
+    }
+    
+    /**
+     * Getter method for the productList.
+     * @return productList the list of product data.
+     */
+    public ArrayBasedList<Product> getProductData() {
+    	return productList;
+    }
+    
+    /**
+     * Setter method for the customerList.
+     * @param newData the new version of the customerList.
+     */
+    private void setCustomerData(ArrayBasedList<Customer> newData) {
+    	customerList = newData;
+    }
+    
+    /**
+     * Setter method for the productList.
+     * @param newData the new version of the productList.
+     */
+    private void setProductData(ArrayBasedList<Product> newData) {
+    	productList = newData;
     }
 }
