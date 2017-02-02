@@ -2,8 +2,6 @@ package edu.ncsu.csc316.grocerystore.io;
 
 import static org.junit.Assert.*;
 
-import java.io.FileNotFoundException;
-
 import org.junit.Test;
 
 import edu.ncsu.csc316.grocerystore.customer.io.OrderFileReader;
