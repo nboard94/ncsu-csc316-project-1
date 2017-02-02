@@ -1,7 +1,5 @@
 package edu.ncsu.csc316.grocerystore.manager;
 
-import java.io.FileNotFoundException;
-
 import edu.ncsu.csc316.grocerystore.customer.Customer;
 import edu.ncsu.csc316.grocerystore.customer.io.CustomerFileReader;
 import edu.ncsu.csc316.grocerystore.customer.io.OrderFileReader;
@@ -30,12 +28,13 @@ public class GroceryStoreManager {
      */
     public GroceryStoreManager(String pathToProductFile, String pathToCustomerFile) {
         CustomerFileReader custReader = new CustomerFileReader(pathToCustomerFile);
-        customerList = custReader.getData();
+        this.setCustomerData(custReader.getData());
         
         OrderFileReader orderReader = new OrderFileReader(pathToProductFile);
-        productList = orderReader.getData();
+        this.setProductData(orderReader.getData());
         
-        System.out.print(this.getCustomers());
+        //System.out.print(this.getCustomers());
+        System.out.print(this.getProduct("Wolf", "mustard"));
     }
     
     /**
@@ -77,9 +76,19 @@ public class GroceryStoreManager {
      */
     public String getProduct(String brand, String description)
     {
-
-        //TODO your code here
-		return description;
+    	Product found = new Product("", "");
+    	String output = "";
+    	
+    	for (int i = 0; i < productList.size(); i++) {
+    		if (productList.get(i).getBrand().equals(brand) && productList.get(i).getDescription().equals(description)) {
+    			found.setBrand(brand);
+    			found.setDescription(description);
+    		}
+    	}
+    	
+    	output = "Product [brand=" + found.getBrand() + ", description=" + found.getDescription() + ", frequency=" + "WHAT" + "]\n";
+        
+		return output;
     }
     
     /**

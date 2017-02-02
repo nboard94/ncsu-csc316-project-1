@@ -1,7 +1,5 @@
 package edu.ncsu.csc316.grocerystore.ui;
 
-import edu.ncsu.csc316.grocerystore.manager.GroceryStoreManager;
-
 /**
  * Contains the main method that starts the program
  * and the GroceryStoreManager object.
@@ -14,6 +12,7 @@ public class DriverUI {
 	/** The filepath for the product file. */
 	static String orderFile;
 	
+	
 	/**
 	 * Where the program starts.
 	 * @param args Would contain arguments.
@@ -21,9 +20,7 @@ public class DriverUI {
 	public static void main(String args[]) {
 		
 		CommandPromptUI cp = new CommandPromptUI();
-		cp.interact();
-		
-		GroceryStoreManager manager = new GroceryStoreManager(cp.getOrderFile(), cp.getCustomerFile());
+		cp.interact();		
 		
 	}
 }
