@@ -31,14 +31,16 @@ public class CustomerFileReader {
 		
 		File file = new File(filePath);
 		Scanner scan = new Scanner(file);
-		currentLine = scan.nextLine();
-		currentData = currentLine.split(",");
 		
-		for(int i = 0; i < currentData.length; i++) {
-			currentData[i] = currentData[i].trim();
-		}
 		
 		while (scan.hasNextLine()) {
+			currentLine = scan.nextLine();
+			currentData = currentLine.split(",");
+			
+			for(int i = 0; i < currentData.length; i++) {
+				currentData[i] = currentData[i].trim();
+			}
+			
 			currentCust.setCustomerID(currentData[0]);
 			currentCust.setCustomerName(currentData[1]);
 			currentCust.setCustomerState(currentData[2]);
