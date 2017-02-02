@@ -27,10 +27,15 @@ public class CustomerFileReader {
 	 * @param filePath The path to the customer file.
 	 * @throws FileNotFoundException 
 	 */
-	public CustomerFileReader(String filePath) throws FileNotFoundException {
+	public CustomerFileReader(String filePath) {
 		
 		File file = new File(filePath);
-		Scanner scan = new Scanner(file);
+		Scanner scan;
+		try {
+			scan = new Scanner(file);
+		} catch (FileNotFoundException e) {
+			throw new RuntimeException();
+		}
 		
 		
 		while (scan.hasNextLine()) {

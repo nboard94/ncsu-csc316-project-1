@@ -29,10 +29,15 @@ public class OrderFileReader {
 	 * @param filePath The path to the order file.
 	 * @throws FileNotFoundException 
 	 */
-	public OrderFileReader(String filePath) throws FileNotFoundException {
+	public OrderFileReader(String filePath) {
 		
 		File file = new File(filePath);
-		Scanner scan = new Scanner(file);
+		Scanner scan;
+		try {
+			scan = new Scanner(file);
+		} catch (FileNotFoundException e) {
+			throw new RuntimeException();
+		}
 		
 		while (scan.hasNextLine()) {
 			

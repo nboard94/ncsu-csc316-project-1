@@ -20,7 +20,7 @@ public class CustomerFileReaderTest {
 	String testFile = "input/customers_small.txt";
 	
 	@Test
-	public void testCustomerFileReader() throws FileNotFoundException {
+	public void testCustomerFileReader() {
 		
 		CustomerFileReader custReadTest = new CustomerFileReader(testFile);
 		

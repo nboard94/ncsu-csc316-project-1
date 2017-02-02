@@ -20,7 +20,7 @@ public class OrderFileReaderTest {
 	String testFile = "input/order_small.txt";
 	
 	@Test
-	public void testOrderFileReader() throws FileNotFoundException {
+	public void testOrderFileReader() {
 		
 		OrderFileReader ordReadTest = new OrderFileReader(testFile);
 		
