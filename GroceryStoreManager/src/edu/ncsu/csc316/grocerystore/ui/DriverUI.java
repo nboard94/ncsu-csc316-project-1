@@ -5,7 +5,7 @@ package edu.ncsu.csc316.grocerystore.ui;
  * and the GroceryStoreManager object.
  * @author Nicholas Board (ndboard)
  */
-public class Driver {
+public class DriverUI {
 	
 	/** The filepath for the customer file. */
 	static String customerFile;
@@ -18,7 +18,7 @@ public class Driver {
 	 */
 	public static void main(String args[]) {
 		
-		CommandPrompt cp = new CommandPrompt();
+		CommandPromptUI cp = new CommandPromptUI();
 		cp.interact();
 		
 	}

@@ -7,7 +7,7 @@ import java.util.Scanner;
  * to retrieve filepath input.
  * @author Nicholas Board (ndboard)
  */
-public class CommandPrompt {
+public class CommandPromptUI {
 
 	/** The filepath for the customer file. */
 	String customerFile;
@@ -17,7 +17,7 @@ public class CommandPrompt {
 	/**
 	 * CommandPrompt constructor, does nothing.
 	 */
-	public CommandPrompt() {
+	public CommandPromptUI() {
 		// This constructor is intentionally empty. Nothing special is needed here.
 	}
 	
