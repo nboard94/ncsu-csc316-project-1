@@ -2,6 +2,8 @@ package edu.ncsu.csc316.grocerystore.ui;
 
 import java.util.Scanner;
 
+import edu.ncsu.csc316.grocerystore.manager.GroceryStoreManager;
+
 /**
  * Interacts with the user via command line in order
  * to retrieve filepath input.
@@ -9,10 +11,18 @@ import java.util.Scanner;
  */
 public class CommandPromptUI {
 
+	/** The single instance of the GroceryStoreManager. */
+	GroceryStoreManager manager;
 	/** The filepath for the customer file. */
 	String customerFile;
 	/** The filepath for the product file. */
 	String orderFile;
+	/** Any other user input. */
+	String command = "";
+	/** Name of the product to look up. */
+	String brandName = "";
+	/** Description of the product to look up. */
+	String productDescription = "";
 	
 	/**
 	 * CommandPrompt constructor, does nothing.
@@ -22,21 +32,50 @@ public class CommandPromptUI {
 	}
 	
 	/**
-	 * Prints queries and takes input via command line.
+	 * Where the program starts.
+	 * @param args Would contain arguments.
 	 */
-	public void interact() {
+	public static void main(String args[]) {
+		CommandPromptUI commandLine = new CommandPromptUI();
 		Scanner commandScan = new Scanner(System.in);
 		
 		//TODO take out these hard strings
 		System.out.println("Please provide the filepath for the customerFile:");
 		//setCustomerFile(commandScan.next());
-		setCustomerFile("input/customers_small.txt");
+		commandLine.setCustomerFile("input/customers_small.txt");
 		
-		System.out.println("\nPlease provide the filepath for the orderFile:");
+		System.out.println("Please provide the filepath for the orderFile:");
 		//setOrderFile(commandScan.next());
-		setOrderFile("input/order_small.txt");
+		commandLine.setOrderFile("input/order_small.txt");
 		
-		System.out.println("\nThank you!\n");
+		commandLine.manager = new GroceryStoreManager(commandLine.getOrderFile(), commandLine.getCustomerFile());
+		
+		while (!commandLine.command.equals("exit")) {
+			System.out.println("Enter 'c' to print out customers in order."
+							+	"\nEnter 'p' to look up a product."
+							+	"\nEnter 'exit' to quite the program.");
+			
+			commandLine.command = commandScan.nextLine();
+			
+			if (commandLine.command.equals("c")) {
+				commandLine.manager.getCustomerData();
+			}
+			else if (commandLine.command.equals("p")) {
+				System.out.println("Name of brand to lookup:");
+				commandLine.brandName = commandScan.nextLine();
+				System.out.println("Description of product to lookup:");
+				commandLine.productDescription = commandScan.nextLine();
+				
+				commandLine.manager.getProduct(commandLine.brandName, commandLine.productDescription);
+			}
+			else if (commandLine.command.equals("exit")) {
+				System.exit(0);
+			}
+			else {
+				System.out.println("Invalid input");
+			}
+		}
+		
 		commandScan.close();
 	}
 	

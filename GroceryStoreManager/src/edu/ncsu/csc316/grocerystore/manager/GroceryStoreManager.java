@@ -32,9 +32,6 @@ public class GroceryStoreManager {
         
         OrderFileReader orderReader = new OrderFileReader(pathToProductFile);
         this.setProductData(orderReader.getData());
-        
-        //System.out.print(this.getCustomers());
-        System.out.print(this.getProduct("Wolf", "mustard"));
     }
     
     /**
@@ -78,15 +75,17 @@ public class GroceryStoreManager {
     {
     	Product found = new Product("", "");
     	String output = "";
+    	int frequency = 0;
     	
     	for (int i = 0; i < productList.size(); i++) {
     		if (productList.get(i).getBrand().equals(brand) && productList.get(i).getDescription().equals(description)) {
     			found.setBrand(brand);
     			found.setDescription(description);
+    			frequency++;
     		}
     	}
     	
-    	output = "Product [brand=" + found.getBrand() + ", description=" + found.getDescription() + ", frequency=" + "WHAT" + "]\n";
+    	output = "Product [brand=" + found.getBrand() + ", description=" + found.getDescription() + ", frequency=" + frequency + "]\n";
         
 		return output;
     }
