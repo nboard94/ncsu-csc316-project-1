@@ -15,6 +15,12 @@ public class OrderFileReader {
 	private ArrayBasedList<Product> data = new ArrayBasedList<Product>();
 	/** The current product while looping. */
 	private Product currentProd = new Product("", "");
+	/** The current line. */
+	private String currentLine;
+	/** The current product's brand. */
+	private String currentBrand;
+	/** The current product's description. */
+	private String currentDescription;
 
 	/**
 	 * Scans in a file, adding product data to the ArrayBasedList.
@@ -25,7 +31,13 @@ public class OrderFileReader {
 		Scanner scan = new Scanner(filePath);
 		
 		while (scan.hasNextLine()) {
-			currentProd.setBrand(scan.nextLine());
+			
+			currentLine = scan.nextLine();
+			currentBrand = currentLine.substring(0, currentLine.indexOf(' '));
+			currentDescription = currentLine.substring(currentLine.indexOf(' ' + 1));
+			
+			currentProd.setBrand(currentBrand);
+			currentProd.setDescription(currentDescription);
 			
 			data.add(currentProd);
 		}
