@@ -6,7 +6,7 @@ import edu.ncsu.csc316.grocerystore.customer.io.OrderFileReader;
 import edu.ncsu.csc316.grocerystore.list.ArrayBasedList;
 import edu.ncsu.csc316.grocerystore.order.Product;
 import edu.ncsu.csc316.grocerystore.sorter.Sorted;
-import edu.ncsu.csc316.grocerystore.sorter.Sorted2;
+import edu.ncsu.csc316.grocerystore.sorter.Sorted;
 
 /**
  * The GroceryStoreManager handles the customer and
@@ -53,7 +53,7 @@ public class GroceryStoreManager {
     	Customer currentCustomer;
     	String output = "";
     	StringBuilder sb = new StringBuilder(output);
-    	Sorted2 sortGuy = new Sorted2();
+    	Sorted sortGuy = new Sorted();
     	
     	
     	long startTime = System.nanoTime();

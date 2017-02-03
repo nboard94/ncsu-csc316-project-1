@@ -10,38 +10,65 @@ public class Sorted {
 	Customer pivot;
 	Customer temp = new Customer("", "", "", 0);
 	Customer temp2 = new Customer("", "", "", 0);
-	
+
 	public Sorted() {
-		
+
 	}
-	
-	public ArrayBasedList<Customer> quickSort(ArrayBasedList<Customer> arr, int low, int high) {
-		if (low < high) {
-			pivotLoc = partition(arr, low, high);
-			quickSort(arr, low, pivotLoc);
-			quickSort(arr, pivotLoc + 1, high);
+
+	//TODO Am I allowed to use online sources?
+	/**
+	 * Non-recursive quicksorting algorithm.  Implemented referencing
+	 * pseudocode from http://csg.sph.umich.edu/abecasis/class/2008/615.07.pdf
+	 * @param arr
+	 * @param low
+	 * @param high
+	 * @return
+	 */
+	public ArrayBasedList<Customer> quicksort(ArrayBasedList<Customer> arr, int low, int high) {
+		int i, s = 0;
+		int[] stack = new int[high + 1];
+		stack[s++] = low;
+		stack[s++] = high;
+		while (s > 0) {
+			high = stack[--s];
+			low = stack[--s];
+			if (low >= high)
+				continue;
+			i = partition(arr, low, high);
+			if (i - low > high - i) {
+				stack[s++] = low;
+				stack[s++] = i - 1;
+				stack[s++] = i + 1;
+				stack[s++] = high;
+			} else {
+				stack[s++] = i + 1;
+				stack[s++] = high;
+				stack[s++] = low;
+				stack[s++] = i - 1;
+			}
 		}
-		
 		return arr;
 	}
-	
-	private int partition(ArrayBasedList<Customer> arr, int low, int high) {
-		pivot = arr.get(low);
-		leftWall = low;
-		
-		for (int i = low + 1; i < high; i++ ) {
-			if (arr.get(i).getCustomerID().compareTo(pivot.getCustomerID()) < 0) {
-				temp = arr.get(i);
-				arr.set(i, arr.get(leftWall));
-				arr.set(leftWall, temp);
-				leftWall++;
-			}
-			
-			temp2 = pivot;
-			pivot = arr.get(leftWall);
-			arr.set(leftWall, pivot);
+
+	public int partition(ArrayBasedList<Customer> arr, int start, int stop) {
+		int up = start, down = stop - 1;
+		Customer part = arr.get(stop);
+		if (stop <= start)
+			return start;
+		while (true) {
+			while (arr.get(up).getCustomerID().compareTo(part.getCustomerID()) < 0)
+				up++;
+			while ((part.getCustomerID().compareTo(arr.get(down).getCustomerID()) < 0) && (up < down))
+				down--;
+			if (up >= down)
+				break;
+			arr.swap(up, down);
+			up++;
+			down--;
+
 		}
-		
-		return leftWall;
+		arr.swap(up, stop);
+		return up;
 	}
+
 }
