@@ -70,7 +70,7 @@ public class GroceryStoreManager {
 			+ ", company=" + currentCustomer.getCustomerName()
 			+ ", state=" + currentCustomer.getCustomerState()
 			+ ", zipcode=" + currentCustomer.getCustomerZipcode()
-			+ "\n");
+			+ "]\n");
     	}
     	
     	output = sb.toString();

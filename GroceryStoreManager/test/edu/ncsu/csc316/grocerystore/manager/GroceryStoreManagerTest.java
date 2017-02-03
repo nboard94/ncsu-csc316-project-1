@@ -20,6 +20,9 @@ public class GroceryStoreManagerTest {
 	ArrayBasedList<Customer> custList = new ArrayBasedList<Customer>();
 	ArrayBasedList<Product> prodList = new ArrayBasedList<Product>();
 	
+	/**
+	 * Tests the GroceryStoreManager.
+	 */
 	@Test
 	public void testGroceryStoreManager() {
 		
@@ -33,6 +36,9 @@ public class GroceryStoreManagerTest {
 		
 		String prodExpect = "Product [brand=Wolf, description=mustard, frequency=2]\n";
 		assertEquals(prodExpect, store.getProduct("Wolf", "mustard"));
+		
+		//String custExpect = "Customer [id=C1657233, company=U-Krop, state=IL, zipcode=88295]\n ";
+		
 	
 	}
 }
