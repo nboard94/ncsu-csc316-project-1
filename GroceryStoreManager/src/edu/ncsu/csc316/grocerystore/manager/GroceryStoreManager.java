@@ -5,6 +5,8 @@ import edu.ncsu.csc316.grocerystore.customer.io.CustomerFileReader;
 import edu.ncsu.csc316.grocerystore.customer.io.OrderFileReader;
 import edu.ncsu.csc316.grocerystore.list.ArrayBasedList;
 import edu.ncsu.csc316.grocerystore.order.Product;
+import edu.ncsu.csc316.grocerystore.sorter.Sorted;
+import edu.ncsu.csc316.grocerystore.sorter.Sorted2;
 
 /**
  * The GroceryStoreManager handles the customer and
@@ -47,18 +49,33 @@ public class GroceryStoreManager {
      */
     public String getCustomers()
     {
+    	
     	Customer currentCustomer;
     	String output = "";
+    	StringBuilder sb = new StringBuilder(output);
+    	Sorted2 sortGuy = new Sorted2();
+    	
+    	
+    	long startTime = System.nanoTime();
+    	customerList = sortGuy.quicksort(customerList, 0, customerList.size() - 1);
+    	long time = System.nanoTime()-startTime;
+    	
+    	
+    	
+    	
     	
     	for (int i = 0; i < customerList.size(); i++) {
     		currentCustomer = customerList.get(i);
     		
-    		output += "Customer [id=" + currentCustomer.getCustomerID()
-    					+ ", company=" + currentCustomer.getCustomerName()
-    					+ ", state=" + currentCustomer.getCustomerState()
-    					+ ", zipcode=" + currentCustomer.getCustomerZipcode()
-    					+ "\n";
+    		sb.append("Customer [id=" + currentCustomer.getCustomerID()
+			+ ", company=" + currentCustomer.getCustomerName()
+			+ ", state=" + currentCustomer.getCustomerState()
+			+ ", zipcode=" + currentCustomer.getCustomerZipcode()
+			+ "\n");
     	}
+    	
+    	output = sb.toString();
+    	output+="\n"+"Total time: "+time*Math.pow(10, -9);
     	
 		return output;
     }

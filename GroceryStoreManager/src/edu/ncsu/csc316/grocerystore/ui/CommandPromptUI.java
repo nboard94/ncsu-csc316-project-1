@@ -39,14 +39,14 @@ public class CommandPromptUI {
 		CommandPromptUI commandLine = new CommandPromptUI();
 		Scanner commandScan = new Scanner(System.in);
 		
-		//TODO take out these hard strings
+		//TODO take out these hard-coded strings for user input
 		System.out.println("Please provide the filepath for the customerFile:");
-		//setCustomerFile(commandScan.next());
-		commandLine.setCustomerFile("input/customers_small.txt");
+		commandLine.setCustomerFile(commandScan.next());
+		//commandLine.setCustomerFile("input/customers_small.txt");
 		
 		System.out.println("Please provide the filepath for the orderFile:");
-		//setOrderFile(commandScan.next());
-		commandLine.setOrderFile("input/order_small.txt");
+		commandLine.setOrderFile(commandScan.next());
+		//commandLine.setOrderFile("input/unitTestProducts");
 		
 		commandLine.manager = new GroceryStoreManager(commandLine.getOrderFile(), commandLine.getCustomerFile());
 		
@@ -58,7 +58,7 @@ public class CommandPromptUI {
 			commandLine.command = commandScan.nextLine();
 			
 			if (commandLine.command.equals("c")) {
-				commandLine.manager.getCustomerData();
+				System.out.println(commandLine.manager.getCustomers());
 			}
 			else if (commandLine.command.equals("p")) {
 				System.out.println("Name of brand to lookup:");
@@ -66,7 +66,7 @@ public class CommandPromptUI {
 				System.out.println("Description of product to lookup:");
 				commandLine.productDescription = commandScan.nextLine();
 				
-				commandLine.manager.getProduct(commandLine.brandName, commandLine.productDescription);
+				System.out.println(commandLine.manager.getProduct(commandLine.brandName, commandLine.productDescription));
 			}
 			else if (commandLine.command.equals("exit")) {
 				System.exit(0);

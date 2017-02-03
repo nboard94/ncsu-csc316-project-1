@@ -63,4 +63,14 @@ public class ArrayBasedList<E> implements List<E> {
 		
 		return items[ slot ];
 	}
+	
+	public void swap(int i,int j){
+		E temp = this.get(i);
+		this.set(i, this.get(j));
+		this.set(j,temp);
+	}
+	
+	public void set(int slot, E newItem) {
+		items[slot] = newItem;
+	}
 }
