@@ -100,8 +100,7 @@ public class GroceryStoreManager {
      */
     public String getProduct(String brand, String description)
     {
-    	String output = "";
-    	StringBuilder sb = new StringBuilder(output);
+    	StringBuilder sb = new StringBuilder();
     	int frequency = 0;
     	
     	for (int i = 0; i < productList.size(); i++) {
@@ -111,9 +110,8 @@ public class GroceryStoreManager {
     	}
     	
     	sb.append("Product [brand=" + brand + ", description=" + description + ", frequency=" + frequency + "]");
-        output = sb.toString();
+        return sb.toString();
     	
-		return output;
     }
     
     /**
