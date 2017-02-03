@@ -24,8 +24,7 @@ public class OrderFileReader {
 
 	/**
 	 * Scans in a file, adding product data to the ArrayBasedList.
-	 * @param filePath The path to the order file.
-	 * @throws FileNotFoundException 
+	 * @param filePath The path to the order file. 
 	 */
 	public OrderFileReader(String filePath) {
 		

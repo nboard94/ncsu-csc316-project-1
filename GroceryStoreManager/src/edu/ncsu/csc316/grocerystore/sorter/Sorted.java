@@ -3,6 +3,10 @@ package edu.ncsu.csc316.grocerystore.sorter;
 import edu.ncsu.csc316.grocerystore.customer.Customer;
 import edu.ncsu.csc316.grocerystore.list.ArrayBasedList;
 
+/**
+ * A sorting algorithm based off the quicksorting technique.
+ * @author Nicholas Board (ndboard)
+ */
 public class Sorted {
 
 	int pivotLoc;
@@ -11,18 +15,21 @@ public class Sorted {
 	Customer temp = new Customer("", "", "", 0);
 	Customer temp2 = new Customer("", "", "", 0);
 
+	/**
+	 * Constructor for the Sorted object.
+	 */
 	public Sorted() {
-
+		//This constructor intentionally left blank.
 	}
 
 	//TODO Am I allowed to use online sources?
 	/**
 	 * Non-recursive quicksorting algorithm.  Implemented referencing
 	 * pseudocode from http://csg.sph.umich.edu/abecasis/class/2008/615.07.pdf
-	 * @param arr
-	 * @param low
-	 * @param high
-	 * @return
+	 * @param arr The ArrayBasedList to perform the sort on.
+	 * @param low The lower boundary of the sort.
+	 * @param high The higher boundary of the sory.
+	 * @return arr The sorted version of the ArrayBasedList initially passed in.
 	 */
 	public ArrayBasedList<Customer> quicksort(ArrayBasedList<Customer> arr, int low, int high) {
 		int i, s = 0;
@@ -50,6 +57,12 @@ public class Sorted {
 		return arr;
 	}
 
+	/**
+	 * @param arr The ArrayBasedList the quicksort is being performed on.
+	 * @param start The start of the partition.
+	 * @param stop Where the partition stops.
+	 * @return up Moving an object up through the ArrayBasedList.
+	 */
 	public int partition(ArrayBasedList<Customer> arr, int start, int stop) {
 		int up = start, down = stop - 1;
 		Customer part = arr.get(stop);

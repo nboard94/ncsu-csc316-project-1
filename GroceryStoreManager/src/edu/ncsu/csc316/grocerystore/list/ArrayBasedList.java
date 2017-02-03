@@ -64,12 +64,22 @@ public class ArrayBasedList<E> implements List<E> {
 		return items[ slot ];
 	}
 	
-	public void swap(int i,int j){
+	/**
+	 * Swaps two objects in an ArrayBasedList.
+	 * @param i The location of the first object to swap.
+	 * @param j The location of the second object to swap.
+	 */
+	public void swap(int i,int j) {
 		E temp = this.get(i);
 		this.set(i, this.get(j));
-		this.set(j,temp);
+		this.set(j, temp);
 	}
 	
+	/**
+	 * Sets an item into a slot in the ArrayBasedList.
+	 * @param slot The slot to set the new item at.
+	 * @param newItem The new item to set in the slot.
+	 */
 	public void set(int slot, E newItem) {
 		items[slot] = newItem;
 	}

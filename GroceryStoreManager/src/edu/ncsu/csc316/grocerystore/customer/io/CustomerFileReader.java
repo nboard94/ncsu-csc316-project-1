@@ -23,7 +23,6 @@ public class CustomerFileReader {
 	/**
 	 * Scans in a file, adding customer data to the ArrayBasedList.
 	 * @param filePath The path to the customer file.
-	 * @throws FileNotFoundException 
 	 */
 	public CustomerFileReader(String filePath) {
 		

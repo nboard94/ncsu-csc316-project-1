@@ -6,7 +6,6 @@ import edu.ncsu.csc316.grocerystore.customer.io.OrderFileReader;
 import edu.ncsu.csc316.grocerystore.list.ArrayBasedList;
 import edu.ncsu.csc316.grocerystore.order.Product;
 import edu.ncsu.csc316.grocerystore.sorter.Sorted;
-import edu.ncsu.csc316.grocerystore.sorter.Sorted;
 
 /**
  * The GroceryStoreManager handles the customer and
@@ -58,7 +57,7 @@ public class GroceryStoreManager {
     	
     	long startTime = System.nanoTime();
     	customerList = sortGuy.quicksort(customerList, 0, customerList.size() - 1);
-    	long time = System.nanoTime()-startTime;
+    	long time = System.nanoTime() - startTime;
     	
     	
     	
@@ -75,7 +74,7 @@ public class GroceryStoreManager {
     	}
     	
     	output = sb.toString();
-    	output+="\n"+"Total time: "+time*Math.pow(10, -9);
+    	output += "\n"+"Total time: " + time * Math.pow(10, -9);
     	
 		return output;
     }
