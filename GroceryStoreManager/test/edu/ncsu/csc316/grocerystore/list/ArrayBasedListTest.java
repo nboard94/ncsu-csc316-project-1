@@ -66,4 +66,26 @@ public class ArrayBasedListTest {
 	    
 	    assertEquals(11, smallList.size());
 	}
+	
+	/**
+	 * Tests the swap method in ArrayBasedList.
+	 */
+	@Test
+	public void swapTest() {
+		ArrayBasedList<Customer> list = new ArrayBasedList<Customer>();
+		
+		Customer cust1 = new Customer("doe", "rae", "mii", 100);
+		Customer cust2 = new Customer("a", "b", "c", 5);
+		
+		list.add(cust1);
+		list.add(cust2);
+		
+		assertEquals(cust1, list.get(0));
+		assertEquals(cust2, list.get(1));
+		
+		list.swap(0, 1);
+		
+		assertEquals(cust2, list.get(0));
+		assertEquals(cust1, list.get(1));
+	}
 }

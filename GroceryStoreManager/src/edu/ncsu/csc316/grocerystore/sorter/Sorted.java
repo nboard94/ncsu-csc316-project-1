@@ -12,9 +12,7 @@ public class Sorted {
 	int pivotLoc;
 	int leftWall;
 	Customer pivot;
-	Customer temp = new Customer("", "", "", 0);
-	Customer temp2 = new Customer("", "", "", 0);
-
+	
 	/**
 	 * Constructor for the Sorted object.
 	 */
