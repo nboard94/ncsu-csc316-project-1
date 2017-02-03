@@ -67,7 +67,7 @@ public class GroceryStoreManager {
     		currentCustomer = customerList.get(i);
     		
     		topad = Integer.toString(currentCustomer.getCustomerZipcode());
-    		if (topad.length() < 5) {
+    		while (topad.length() < 5) {
     			topad = "0" + topad;
     		}
     		curzip = Integer.valueOf(topad);
