@@ -20,35 +20,34 @@ public class Sorted {
 		//This constructor intentionally left blank.
 	}
 
-	//TODO Am I allowed to use online sources?
 	/**
 	 * Non-recursive quicksorting algorithm.  Implemented referencing
 	 * pseudocode from http://csg.sph.umich.edu/abecasis/class/2008/615.07.pdf
 	 * @param arr The ArrayBasedList to perform the sort on.
-	 * @param low The lower boundary of the sort.
-	 * @param high The higher boundary of the sory.
+	 * @param floor The lower boundary of the sort.
+	 * @param ceiling The higher boundary of the sory.
 	 * @return arr The sorted version of the ArrayBasedList initially passed in.
 	 */
-	public ArrayBasedList<Customer> quicksort(ArrayBasedList<Customer> arr, int low, int high) {
+	public ArrayBasedList<Customer> quicksort(ArrayBasedList<Customer> arr, int floor, int ceiling) {
 		int i, s = 0;
-		int[] stack = new int[high + 1];
-		stack[s++] = low;
-		stack[s++] = high;
+		int[] stack = new int[ceiling + 1];
+		stack[s++] = floor;
+		stack[s++] = ceiling;
 		while (s > 0) {
-			high = stack[--s];
-			low = stack[--s];
-			if (low >= high)
+			ceiling = stack[--s];
+			floor = stack[--s];
+			if (floor >= ceiling)
 				continue;
-			i = partition(arr, low, high);
-			if (i - low > high - i) {
-				stack[s++] = low;
+			i = partition(arr, floor, ceiling);
+			if (i - floor > ceiling - i) {
+				stack[s++] = floor;
 				stack[s++] = i - 1;
 				stack[s++] = i + 1;
-				stack[s++] = high;
+				stack[s++] = ceiling;
 			} else {
 				stack[s++] = i + 1;
-				stack[s++] = high;
-				stack[s++] = low;
+				stack[s++] = ceiling;
+				stack[s++] = floor;
 				stack[s++] = i - 1;
 			}
 		}

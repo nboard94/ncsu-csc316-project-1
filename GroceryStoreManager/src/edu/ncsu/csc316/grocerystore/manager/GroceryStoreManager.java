@@ -100,19 +100,16 @@ public class GroceryStoreManager {
      */
     public String getProduct(String brand, String description)
     {
-    	Product found = new Product("", "");
     	String output = "";
     	int frequency = 0;
     	
     	for (int i = 0; i < productList.size(); i++) {
     		if (productList.get(i).getBrand().equals(brand) && productList.get(i).getDescription().equals(description)) {
-    			found.setBrand(brand);
-    			found.setDescription(description);
     			frequency++;
     		}
     	}
     	
-    	output = "Product [brand=" + found.getBrand() + ", description=" + found.getDescription() + ", frequency=" + frequency + "]";
+    	output = "Product [brand=" + brand + ", description=" + description + ", frequency=" + frequency + "]";
         
 		return output;
     }
