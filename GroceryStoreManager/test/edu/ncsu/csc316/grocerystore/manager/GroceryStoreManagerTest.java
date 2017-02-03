@@ -38,7 +38,7 @@ public class GroceryStoreManagerTest {
 		assertEquals(prodExpect, store.getProduct("Wolf", "mustard"));
 		
 		//String custExpect = "Customer [id=C1657233, company=U-Krop, state=IL, zipcode=88295]\n ";
-		
+		store.getCustomers();
 	
 	}
 }
