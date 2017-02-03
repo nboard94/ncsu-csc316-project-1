@@ -100,20 +100,14 @@ public class GroceryStoreManager {
      */
     public String getProduct(String brand, String description)
     {
-    	StringBuilder sb = new StringBuilder();
     	int frequency = 0;
-    	Product currentProd = new Product("","");
-    	
     	for (int i = 0; i < productList.size(); i++) {
-    		currentProd = productList.get(i);
-    		
-    		if (currentProd.getBrand().equals(brand) && currentProd.getDescription().equals(description)) {
+    		if (productList.get(i).getBrand().equals(brand) && productList.get(i).getDescription().equals(description)) {
     			frequency++;
     		}
     	}
     	
-    	sb.append("Product [brand=" + brand + ", description=" + description + ", frequency=" + frequency + "]");
-        return sb.toString();
+    	return "Product [brand=" + brand + ", description=" + description + ", frequency=" + frequency + "]";
     	
     }
     
