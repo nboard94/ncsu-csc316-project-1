@@ -74,7 +74,7 @@ public class GroceryStoreManager {
     	}
     	
     	output = sb.toString();
-    	output += "\n"+"Total time: " + time * Math.pow(10, -9);
+    	output += "\n" + "Total time: " + time * Math.pow(10, -9);
     	
 		return output;
     }

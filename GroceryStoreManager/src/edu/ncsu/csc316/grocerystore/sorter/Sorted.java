@@ -58,6 +58,8 @@ public class Sorted {
 	}
 
 	/**
+	 * Creates the partition around the pivot point in the quicksort,
+	 * narrowing down the current set of data.
 	 * @param arr The ArrayBasedList the quicksort is being performed on.
 	 * @param start The start of the partition.
 	 * @param stop Where the partition stops.

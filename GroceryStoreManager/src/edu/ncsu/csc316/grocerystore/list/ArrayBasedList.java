@@ -69,7 +69,7 @@ public class ArrayBasedList<E> implements List<E> {
 	 * @param i The location of the first object to swap.
 	 * @param j The location of the second object to swap.
 	 */
-	public void swap(int i,int j) {
+	public void swap(int i, int j) {
 		E temp = this.get(i);
 		this.set(i, this.get(j));
 		this.set(j, temp);
