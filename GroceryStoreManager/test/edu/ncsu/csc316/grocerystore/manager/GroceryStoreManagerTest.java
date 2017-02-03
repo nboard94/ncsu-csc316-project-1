@@ -34,7 +34,7 @@ public class GroceryStoreManagerTest {
 		custList.add(oneCust);
 		prodList.add(oneProd);
 		
-		String prodExpect = "Product [brand=Wolf, description=mustard, frequency=2]\n";
+		String prodExpect = "Product [brand=Wolf, description=mustard, frequency=2]";
 		assertEquals(prodExpect, store.getProduct("Wolf", "mustard"));
 		
 		//String custExpect = "Customer [id=C1657233, company=U-Krop, state=IL, zipcode=88295]\n ";
