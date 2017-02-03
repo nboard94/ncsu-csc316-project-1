@@ -14,6 +14,9 @@ import edu.ncsu.csc316.grocerystore.list.ArrayBasedList;
  */
 public class SortedTest {
 
+	/**
+	 * Tests the quicksort in the Sorted class.
+	 */
 	@Test
 	public void testSorted() {
 		
