@@ -55,9 +55,9 @@ public class GroceryStoreManager {
     	Sorted sortGuy = new Sorted();
     	
     	
-    	long startTime = System.nanoTime();
+    	//long startTime = System.nanoTime();
     	customerList = sortGuy.quicksort(customerList, 0, customerList.size() - 1);
-    	long time = System.nanoTime() - startTime;
+    	//long time = System.nanoTime() - startTime;
     	
     	
     	int topad;
@@ -85,7 +85,7 @@ public class GroceryStoreManager {
     	}
     	
     	output = sb.toString();
-    	output += "\n" + "Total time: " + time * Math.pow(10, -9);
+    //	output += "\n" + "Total time: " + time * Math.pow(10, -9);
     	
 		return output;
     }
