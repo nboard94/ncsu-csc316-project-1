@@ -101,7 +101,7 @@ public class GroceryStoreManager {
     		}
     	}
     	
-    	output = "Product [brand=" + found.getBrand() + ", description=" + found.getDescription() + ", frequency=" + frequency + "]\n";
+    	output = "Product [brand=" + found.getBrand() + ", description=" + found.getDescription() + ", frequency=" + frequency + "]";
         
 		return output;
     }
