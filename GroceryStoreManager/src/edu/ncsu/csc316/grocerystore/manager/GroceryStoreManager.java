@@ -60,16 +60,22 @@ public class GroceryStoreManager {
     	long time = System.nanoTime() - startTime;
     	
     	
-    	
-    	
+    	String topad;
+    	int curzip;
     	
     	for (int i = 0; i < customerList.size(); i++) {
     		currentCustomer = customerList.get(i);
     		
+    		topad = Integer.toString(currentCustomer.getCustomerZipcode());
+    		if (topad.length() < 5) {
+    			topad += "0" + topad;
+    		}
+    		curzip = Integer.valueOf(topad);
+    		
     		sb.append("Customer [id=" + currentCustomer.getCustomerID()
 			+ ", company=" + currentCustomer.getCustomerName()
 			+ ", state=" + currentCustomer.getCustomerState()
-			+ ", zipcode=" + currentCustomer.getCustomerZipcode()
+			+ ", zipcode=" + curzip
 			+ "]\n");
     	}
     	
