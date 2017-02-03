@@ -104,8 +104,10 @@ public class GroceryStoreManager {
     	int frequency = 0;
     	
     	for (int i = 0; i < productList.size(); i++) {
-    		if (productList.get(i).getBrand().equals(brand) && productList.get(i).getDescription().equals(description)) {
-    			frequency++;
+    		if (productList.get(i).getBrand().equals(brand)) {
+    			if (productList.get(i).getDescription().equals(description)) {
+    				frequency++;
+    			}
     		}
     	}
     	
