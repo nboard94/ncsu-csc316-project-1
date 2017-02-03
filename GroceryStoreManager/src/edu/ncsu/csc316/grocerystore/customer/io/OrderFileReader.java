@@ -33,6 +33,7 @@ public class OrderFileReader {
 		try {
 			scan = new Scanner(file);
 		} catch (FileNotFoundException e) {
+			System.out.println("Invalid order filepath");
 			throw new RuntimeException();
 		}
 		

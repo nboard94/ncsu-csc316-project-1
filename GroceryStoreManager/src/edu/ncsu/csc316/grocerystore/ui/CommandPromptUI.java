@@ -66,7 +66,12 @@ public class CommandPromptUI {
 				System.out.println("Description of product to lookup:");
 				commandLine.productDescription = commandScan.nextLine();
 				
-				System.out.println(commandLine.manager.getProduct(commandLine.brandName, commandLine.productDescription));
+				if (commandLine.brandName == null || commandLine.productDescription == null || commandLine.brandName.equals("") || commandLine.productDescription.equals("")) {
+					System.out.println("Invalid brand or product.");
+				}
+				else {
+					System.out.println(commandLine.manager.getProduct(commandLine.brandName, commandLine.productDescription));
+				}
 			}
 			else if (commandLine.command.equals("exit")) {
 				System.exit(0);

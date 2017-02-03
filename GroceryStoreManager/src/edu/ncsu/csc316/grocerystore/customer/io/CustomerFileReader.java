@@ -31,6 +31,7 @@ public class CustomerFileReader {
 		try {
 			scan = new Scanner(file);
 		} catch (FileNotFoundException e) {
+			System.out.println("Invalid customer filepath");
 			throw new RuntimeException();
 		}
 		
